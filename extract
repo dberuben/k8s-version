@@ -1,0 +1,2 @@
+latest_version=$(eksctl version -o json | jq -r '.EKSServerSupportedVersions | sort | .[-1]')
+echo "{\"latestVersion\": \"$latest_version\"}" > k8s-versions.json 
