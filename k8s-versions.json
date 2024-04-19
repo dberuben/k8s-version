@@ -8,6 +8,7 @@
     "1.28",
     "1.29"
   ],
+  "LatestVersion": "1.29",
   "Metadata": {
     "BuildDate": "2024-03-22T12:39:36Z",
     "GitCommit": "5b28c1794"
@@ -15,3 +16,4 @@
   "PreReleaseID": "dev",
   "Version": "0.175.0"
 }
+
