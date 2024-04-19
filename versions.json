@@ -1,2 +1,4 @@
-{"eksLatestVersion": "1.29"}
-{"opensearchLatestVersion": "OpenSearch_2.11"}
+{
+  "eksLatestVersion": "1.29",
+  "opensearchLatestVersion": "OpenSearch_2.11"
+}

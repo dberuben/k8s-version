@@ -1,5 +1,11 @@
 latest_eks_version=$(eksctl version -o json | jq -r '.EKSServerSupportedVersions | sort | .[-1]')
 latest_opensearch_version=$(aws opensearch list-versions --region eu-west-1 --output json | jq -r '.Versions[] | select(startswith("OpenSearch_")) | sub("OpenSearch_"; "") | split(".") | map(tonumber) | {major: .[0], minor: .[1]} | select(.major >= 1) | [(.major|tostring),(.minor|tostring)] | join(".")' | sort -V | tail -n 1 | xargs -I{} echo "OpenSearch_{}")
-> versions.json
-echo "{\"eksLatestVersion\": \"$latest_eks_version\"}" >> versions.json 
-echo "{\"opensearchLatestVersion\": \"$latest_opensearch_version\"}" >> versions.json 
+# Start a new JSON file
+echo "{" > versions.json
+# Add the EKS version as JSON
+echo "  \"eksLatestVersion\": \"$latest_eks_version\"," >> versions.json
+# Add the OpenSearch version as JSON, ensuring it is the last element without a comma
+echo "  \"opensearchLatestVersion\": \"$latest_opensearch_version\"" >> versions.json
+# Close the JSON object
+echo "}" >> versions.json
+
