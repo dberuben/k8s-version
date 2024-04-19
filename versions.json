@@ -1,5 +1,6 @@
 {
   "eksLatestVersion": "1.29",
   "opensearchLatestVersion": "2.11",
-  "elasticacheLatestVersion": "7.1"
+  "elasticacheLatestVersion": "7.1",
+  "auroraLatestVersion": "3.06.0"
 }
