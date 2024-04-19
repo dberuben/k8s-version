@@ -7,7 +7,7 @@ echo "{" > versions.json
 # Add the EKS version as JSON
 echo "  \"eksLatestVersion\": \"$latest_eks_version\"," >> versions.json
 # Add the OpenSearch version as JSON, ensuring it is the last element without a comma
-echo "  \"opensearchLatestVersion\": \"$latest_opensearch_version\"" >> versions.json
+echo "  \"opensearchLatestVersion\": \"$latest_opensearch_version\"," >> versions.json
 echo "  \"elasticacheLatestVersion\": \"$latest_elasticache_version\"" >> versions.json
 # Close the JSON object
 echo "}" >> versions.json
